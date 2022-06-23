@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib as plt
+from astropy.visualization import (AsinhStretch, ImageNormalize)
 
 def make_image(data):
     #Creates image for simulated observation
