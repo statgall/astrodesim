@@ -1,6 +1,5 @@
 from astropy.io import fits
 
-
 def download_fits(path, wavelength):
     
     file = path + '/isoscat_' + wavelength + 'mm_inc45.fits'
