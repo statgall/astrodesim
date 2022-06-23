@@ -4,9 +4,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.interpolate import interp2d
 
-def download_fits(path, wavelength):
+def upload_fits(file):
     
-    file = path + '/isoscat_' + wavelength + 'mm_inc45.fits'
+    """ 
+        Fuction uploads a fits file
+
+        Arg: file = path to fits file with desired image
+        Returns: header file and image data
+
+    """
     with fits.open(file) as hdul:
         sim_data = hdul[0].data[0,0,:,:]
         header = hdul[0].header
@@ -14,29 +20,29 @@ def download_fits(path, wavelength):
     return sim_data, header
 
 path = '/Users/colinmoyer/Downloads/'
-wavelength = ['0.87', '1.3']
-sim_data, header = download_fits(path, wavelength[0])
-sim_data1, header1 = download_fits(path, wavelength[1])
+file1 = path + '/isoscat_0.87mm_inc45.fits'
+file2 = path + '/isoscat_1.3mm_inc45.fits'
+sim_data1, header1 = download_fits(file1) # 0.87 mm data & header
+sim_data2, header2 = download_fits(file2) # 1.3 mm data & header
 
-# Creates image for simulated observation at 0.87 mm 
-fig = plt.figure(figsize = (8,8))
-image = sim_data
-vmax = np.percentile(image, 99)
-vmin = np.percentile(image, 1)
-norm = ImageNormalize(vmin=vmin, vmax=vmax, stretch=AsinhStretch())
-snu = np.squeeze(image)
+def make_image(data):
+    # Creates image for simulated observation at 0.87 mm 
+    fig = plt.figure(figsize = (8,8))
+    vmax = np.percentile(data, 99)
+    vmin = np.percentile(data, 1)
+    norm = ImageNormalize(vmin=vmin, vmax=vmax, stretch=AsinhStretch())
+    snu = np.squeeze(data)
 
-im = plt.imshow(snu, origin='lower', cmap='inferno', norm=norm)
+    im = plt.imshow(snu, origin='lower', cmap='inferno', norm=norm)
 
-# Creates image for simulated observation at 1.3 mm
-fig = plt.figure(figsize = (8,8))
-image1 = sim_data1
-vmax1 = np.percentile(image1, 99)
-vmin1 = np.percentile(image1, 1)
-norm1 = ImageNormalize(vmin=vmin1, vmax=vmax1, stretch=AsinhStretch())
-snu1 = np.squeeze(image1)
+def Jyperbeam_to_Jyperpix():
+    
 
-im1 = plt.imshow(snu1, origin='lower', cmap='inferno', norm=norm1)
+make_image(sim_data1)
+make_image(sim_data2)
+
+# want to change Jy/beam to Jy/pix on both images before resizing
+
 
 # Rescales image1 to have the same pixel size and number of pixels as image2
 
