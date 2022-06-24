@@ -1,21 +1,18 @@
 import numpy as np
 from scipy.interpolate import interp2d
 
-def resize_smalltolarge(im1, deltapix1, new_dim, deltapix2):
-    
+def resize_smalltolarge(im1, deltapix1, new_dim, deltapix2):   
     """
-    im1: image1 data
-    deltapix1: pixel size from image1 (deg/pix)
-    new_dim: number of pixels from image2 (pix)
-    deltapix2: pixel size from image2 (deg/pix)
-    
-    IMAGE1: (1.3 mm) LESS PIXELS, BUT LARGE PIX SIZE (1500 PIXELS, 3.9E-7 DEG/PIX) -> WIDTH2 = 2.106"
-    IMAGE2: (0.87 mm) MORE PIXELS, BUT SMALL PIX SIZE (2000 PIXELS, 2.8E-7 DEG/PIX) -> WIDTH1 = 2.016"
-    
-    RESIZING IMAGE1 TO MATCH IMAGE2 DIMS
-    
-    """
+        Function resizes a small image to match the dimesions of a larger image with a different pixel size
 
+        Args:
+        im1 (numpy.ndarray): data for smaller image
+        deltapix1 (float): pixel thickness of smaller image (deg/pix)
+        new_dim (int): number of pixels along x-axis of larger image
+        deltapix2 (float): pixel thickness of larger image (deg/pix)
+    
+        Returns: new_im (numpy.ndarray): resized image data
+    """
     # Works if number of pixels in image1 is less than the number of pixels in image2
     
     # Creates a temporary matrix of the same length and width as image 2

@@ -1,23 +1,29 @@
 import math
-import numpy as np
 
-
-"""
-
-Take the flux intensities (per pixel) from two FITS image files and compute the dust emission spectral index (beta).
-
-"""
 def spectral_index_conversion(flux1, flux2, wavelength1, wavelength2):
-#flux1 =     #flux intensity from the first FITS image file
-#flux2 =     #flux intensity from the second FITS image file
+    """ 
+        Fuction computes the dust emission spectral index from two intensity values
 
-#wavelength1 =     #wavelength (in mm) for the first image was captured as
-#wavelength2 =      #wavelength (in mm) for the second image was captured as
+        Arg: 
+            flux1 (float): Intensity (Jy/pix) of a single pixel from first image
+            flux2 (float): Intensity (Jy/pix) of a single pixel from second image
+            wavelength1 (float): wavelength of first image
+            wavelength2 (float): wavelength of second image
 
-    flux_rat = math.log10(flux1 / flux2)
+        Returns: 
+            alpha (float): dust emission spectral index
+    """   
+    flux_replacement = 1e-34
+    
+    # corrects for negative or zero values to be used in log calculations
+    if flux1 < 0:
+        flux1 = flux_replacement
+        
+    if flux2 <= 0:
+        flux2 = flux_replacement
 
-    wavelength_rat = math.log(wavelength1 / wavelength2)
+    flux_rat = math.log10(flux1/flux2)
+    wavelength_rat = math.log10(wavelength2/wavelength1)
+    alpha = flux_rat/wavelength_rat 
 
-    beta = flux_rat / wavelength_rat #beta is the new array of 'flux intensities' used to create a new image
-
-    return beta
+    return alpha
