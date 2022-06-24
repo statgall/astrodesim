@@ -1,3 +1,5 @@
+import numpy as np
+
 def Jyperbeam_to_Jyperpix(header, data):
     
     convert = np.pi / 180 #deg to rads
