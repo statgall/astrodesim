@@ -1,4 +1,3 @@
-
 def is_small(im1, im2, header1, header2):
     """ 
         Fuction determines which image has the least amount of pixels
