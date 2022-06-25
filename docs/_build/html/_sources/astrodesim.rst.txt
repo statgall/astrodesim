@@ -5,5 +5,5 @@ Astrodesim Functions
 
 Function to make a dust emission spectral index map.
 
-.. automodule:: astrodesim.astrodesim
+.. automodule:: astrodesim
    :members:
