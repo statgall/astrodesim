@@ -10,7 +10,7 @@ Welcome to astrodesim's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   astrodesim.rst
+   desim.rst
 
 
 Indices and tables
