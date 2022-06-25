@@ -1,6 +1,1 @@
 import astrodesim.astrodesim.desim
-import astrodesim.astrodesim.upload_fits
-import astrodesim.astrodesim.is_small
-import astrodesim.astrodesim.resize_smalltolarge
-import astrodesim.astrodesim.spectral_index_map
-import astrodesim.astrodesim.make_image
