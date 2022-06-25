@@ -1,8 +1,8 @@
-import upload_fits
-import is_small
-import resize_smalltolarge
-import spectral_index_map
-import make_image
+from astrodesim import upload_fits
+from astrodesim import is_small
+from astrodesim import resize_smalltolarge
+from astrodesim import spectral_index_map
+from astrodesim import make_image
 
 def desim(file1, file2):
     """
