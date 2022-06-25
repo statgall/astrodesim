@@ -1,5 +1,5 @@
-import Jyperbeam_to_Jyperpix
-import spectral_index_conversion
+from astrodesim import jyperbeam_to_jyperpix
+from astrodesim import spectral_index_conversion
 
 def spectral_index_map(data1, data2, header1, header2):
     """ 
@@ -15,8 +15,8 @@ def spectral_index_map(data1, data2, header1, header2):
             im3 (numpy.ndarray): image data in dust emission spectral index units
     """
     # Converts intensity of image data from Jy/beam to Jy/pix
-    im1 = Jyperbeam_to_Jyperpix(header1, data1) 
-    im2 = Jyperbeam_to_Jyperpix(header2, data2) 
+    im1 = jyperbeam_to_jyperpix(header1, data1) 
+    im2 = jyperbeam_to_jyperpix(header2, data2) 
 
     c = 299792258 # speed of light in m/s
 

@@ -2,7 +2,7 @@ README.md
 setup.py
 astrodesim/Jyperbeam_to_Jyperpix.py
 astrodesim/__init__.py
-astrodesim/astrodesim.py
+astrodesim/desim.py
 astrodesim/is_small.py
 astrodesim/make_image.py
 astrodesim/resize_smalltolarge.py

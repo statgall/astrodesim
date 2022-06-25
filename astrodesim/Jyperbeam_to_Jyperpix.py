@@ -1,6 +1,6 @@
 import numpy as np
 
-def Jyperbeam_to_Jyperpix(header, data):
+def jyperbeam_to_jyperpix(header, data):
     """ 
         Fuction converts Jy/beam to Jy/pix
 
