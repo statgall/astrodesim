@@ -4,15 +4,14 @@ import resize_smalltolarge
 import spectral_index_map
 import make_image
 
-"""
+def astrodesim(file1, file2):
+    """
     Function outputs a dust emission spectral index map
 
     Args: 
         file1 (str): path to fits file with image at one wavelength
         file2 (str): path to fits file with same image at another wavelength
-"""
-def astrodesim(file1, file2):
-
+    """
     header1, sim_data1 = upload_fits(file1) 
     header2, sim_data2 = upload_fits(file2)
 
