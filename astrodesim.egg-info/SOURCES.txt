@@ -4,6 +4,7 @@ astrodesim/Jyperbeam_to_Jyperpix.py
 astrodesim/__init__.py
 astrodesim/desim.py
 astrodesim/is_small.py
+astrodesim/jyperbeam_to_jyperpix.py
 astrodesim/make_image.py
 astrodesim/resize_smalltolarge.py
 astrodesim/spectral_index_conversion.py
