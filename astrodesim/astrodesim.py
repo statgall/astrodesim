@@ -4,7 +4,7 @@ import resize_smalltolarge
 import spectral_index_map
 import make_image
 
-def astrodesim(file1, file2):
+def desim(file1, file2):
     """
     Function outputs a dust emission spectral index map
 
