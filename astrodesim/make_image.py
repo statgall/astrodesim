@@ -20,3 +20,5 @@ def make_image(data):
     snu = np.squeeze(data)
 
     im = plt.imshow(snu, origin='lower', cmap='inferno', norm=norm)
+
+    plt.show()
