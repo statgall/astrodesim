@@ -23,7 +23,7 @@ author = 'Sara T. Gallagher, Erik Drybread, Alejandro Ruiz'
 root_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
-release = 'Version 0.1'
+release = 'Version 0.2'
 
 
 # -- General configuration ---------------------------------------------------

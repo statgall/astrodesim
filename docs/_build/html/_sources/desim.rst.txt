@@ -1,9 +1,9 @@
-.. _astrodesim:
+.. _desim:
 
-desim Function
+Map Function
 ==============
 
 Function to make a dust emission spectral index map.
 
-.. automodule:: desim
+.. automodule:: astrodesim.desim
    :members:
